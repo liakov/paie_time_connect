@@ -1,6 +1,6 @@
-local interval = 10000 -- Intervalle en millisecondes (par défaut 1h = 3600000 ms)
-local initialAmount = 25 -- Montant initial pour le paiement
-local incrementAmount = 0 -- Montant d'augmentation pour chaque paiement
+local interval = 3600000 -- Intervalle en millisecondes (par défaut 1h = 3600000 ms)
+local initialAmount = 100 -- Montant initial pour le paiement
+local incrementAmount = 25 -- Montant d'augmentation pour chaque paiement
 
 local playerAmounts = {} -- Table pour suivre le montant accumulé de chaque joueur
 
