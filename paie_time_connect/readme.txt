@@ -1,6 +1,6 @@
 Explication du script
 
-Intervalle de paiement : Défini à 15 minutes (900000 millisecondes).
+Intervalle de paiement : Défini à 1 heure (3600000 millisecondes).
 
 Montants de paiement : Le montant initial est de 100$, et il augmente de 25$ à chaque paiement(mettre 0 pour aucune augmentation).
 
