@@ -1,5 +1,4 @@
 Explication du script
-Initialisation de ESX : Le script utilise TriggerEvent('esx:getSharedObject', ...) pour obtenir l'objet ESX.
 
 Intervalle de paiement : Défini à 15 minutes (900000 millisecondes).
 
