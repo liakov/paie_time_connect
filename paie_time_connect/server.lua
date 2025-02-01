@@ -1,12 +1,8 @@
--- Intervalle en millisecondes (15 minutes = 900000 ms)
-local interval = 900000
--- Montant initial pour le paiement
-local initialAmount = 50
--- Montant d'augmentation pour chaque paiement
-local incrementAmount = 25
+local interval = 10000 -- Intervalle en millisecondes (par défaut 1h = 3600000 ms)
+local initialAmount = 25 -- Montant initial pour le paiement
+local incrementAmount = 0 -- Montant d'augmentation pour chaque paiement
 
--- Table pour suivre le montant accumulé de chaque joueur
-local playerAmounts = {}
+local playerAmounts = {} -- Table pour suivre le montant accumulé de chaque joueur
 
 -- Fonction pour donner de l'argent aux joueurs
 function payPlayers()
@@ -26,14 +22,12 @@ function payPlayers()
             -- Verser l'argent sur le compte bancaire
             xPlayer.addAccountMoney('bank', amountToPay)
             -- Envoyer une notification au joueur
-            TriggerClientEvent('esx:showNotification', xPlayer.source, 'Vous avez reçu ~g~$' .. amountToPay .. ' ~s~sur votre compte bancaire.')
-            -- Augmenter le montant accumulé pour le prochain paiement
+            TriggerClientEvent('esx:showNotification', xPlayer.source, 'Vous avez reçu une prime d\'activité de: ~g~$' .. amountToPay .. ' ~s~versé sur votre compte bancaire.')
             playerAmounts[playerId] = playerAmounts[playerId] + incrementAmount
         end
     end
 end
 
--- Boucle pour exécuter la fonction à intervalles réguliers
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(interval)
